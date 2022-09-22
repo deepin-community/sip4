@@ -1,0 +1,116 @@
+.\"
+.\" Created by Ricardo Cardenes Medina <ricardo@conysis.com>
+.\" for the Debian 'sip' package
+.\"
+.TH SIP 1 "2019-10-15"
+.SH NAME
+sip \- generates C++/Python bindings
+.SH SYNOPSIS
+.B sip
+[\-h] [\-V] [\-a\~file] [\-b\~file] [\-B\~tag] [\-c\~dir] [\-d\~file] [\-D] [\-e] [\-f] [\-g]
+[\-I\~dir] [\-j\~number] [\-k] [\-m\~file] [\-n\~name] [\-o] [\-p\~module] [\-P] [\-r] [\-s\~suffix]
+[\-t\~tag] [\-w] [\-x\~feature] [\-X\~id:file] [\-y\~file] [\-z\~file] [@file] [file]
+.SH DESCRIPTION
+.B sip
+takes a set of specification files and generates C++ code, documentation and build files.
+
+The format of the needed specification file is similar to a C++ header.
+sip includes run-time support for the generated code.
+.SH OPTIONS
+.TP
+.B \-h
+Show summary of options.
+.TP
+.B \-V
+Display the sip version number.
+.TP
+.B \-a file
+The name of the QScintilla API file. If not indicated, it will not
+be generated.
+.TP
+.B \-b file
+The name of the build file. If not indicated, it will not be generated.
+.TP
+.B \-B tag
+Add \fItag\fR to the list of timeline backstops (deprecated).
+.TP
+.B \-c dir
+The name of the directory where generated source file will be put.
+If not indicated, no code will be generated.
+.TP
+.B \-d file
+The name of the documentation file (deprecated).
+If not indicated, no documentation will be generated.
+.TP
+.B \-D
+Generate code for a debug build of Python.
+.TP
+.B \-e
+Enable support for exceptions. Disabled by default.
+.TP
+.B \-f
+Handle warnings as errors.
+.TP
+.B \-g
+Always release and reacquire the GIL.
+.TP
+.B \-I dir
+Directory where sip can search for included files.
+.TP
+.B \-j number
+Splits the generated code in \fInumber\fR files (1 by default). This
+flag was added for parallel compilation on SMP machines.
+.TP
+.B \-k
+Support keyword arguments in functions and methods.
+.TP
+.B \-m file
+The name of the XML export file. If not indicated, the file will not be generated.
+.TP
+.B \-n name
+The qualified name of the private copy of the sip module.
+.TP
+.B \-o
+Enable the automatic generation of docstrings. Disabled by default.
+.TP
+.B \-p module
+Give the name of the consolidated module this module should be a component of.
+.TP
+.B \-P
+Enable the protected/public hack.
+.TP
+.B \-r
+Enable tracing on generated code.
+.TP
+.B \-s suffix
+The suffix used for generated C or C++ files (".c" or ".cpp" if none specified)
+.TP
+.B \-t tag
+The version/platform to generate code for.
+.TP
+.B \-w
+Enable warning messages.
+.TP
+.B \-x feature
+Disable a feature.
+.TP
+.B \-X id:file
+Create the extracts for an \fIid\fR in a \fIfile\fR.
+.TP
+.B \-y file
+The name of the .pyi stub file to generate. If not indicated, it will not be generated.
+.TP
+.B \-z file
+The name of a file containing additional command line flags.
+This option is deprecated, use \fI@file\fR instead.
+.TP
+.B @file
+The name of a file containing more command line flags.
+.TP
+.B file
+The name of the file containing the specification. If you skip it,
+sip will expect to be fed by stdin.
+.SH AUTHOR
+This manual page was written by Ricardo Javier Cardenes Medina <rcardenes@debian.org>,
+Torsten Marek <shlomme@debian.org> and Dmitry Shachnev <mitya57@debian.org>,
+for the Debian project (but may be used by others).
